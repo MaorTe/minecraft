@@ -6,7 +6,6 @@ const resetBtn = document.querySelector('.reset-btn');
 
 startBtn.addEventListener('click', startGame);
 function startGame() {
-	// debugger;
 	if (world.childElementCount === 0) {
 		console.log(world.childElementCount);
 		createMatrix();
@@ -19,7 +18,6 @@ function startGame() {
 // add event listener to restart the game button to go back to the landing page
 restartBtn.addEventListener('click', restart);
 function restart() {
-	// debugger;
 	console.log(world.childElementCount);
 	if (world.childElementCount === 0) {
 		createMatrix();
@@ -32,12 +30,11 @@ function restart() {
 // --------------------- World Creation ----------------------
 let worldMatrix = [];
 let worldSize = 20;
-// change world size in the css file
+// sync world size to css
 document.documentElement.style.setProperty('--world-size', worldSize);
 // world container
 const world = document.querySelector('.world');
 
-// make a matrix of 10*10 of sky:
 function createMatrix() {
 	for (let row = 0; row < worldSize; row++) {
 		worldMatrix[row] = [];
@@ -51,7 +48,6 @@ function createMatrix() {
 		}
 	}
 }
-// reset the world tiles to the origin
 
 function createWorld() {
 	worldShape = [
@@ -137,11 +133,9 @@ function MineableByTool(tool, tile) {
 let obj = {};
 function handleclick(e) {
 	let tileSelected = e.target.getAttribute('data-type');
-	// console.log(tileSelected);
-
 	if (document.querySelector('.selected')) {
 		let selectedTool = document.querySelector('.selected');
-		// if mineable increase
+		// if mineable ,increase
 		if (MineableByTool(selectedTool.getAttribute('data-type'), tileSelected)) {
 			if (tileSelected && tileSelected !== 'sky') {
 				obj[tileSelected] = obj[tileSelected] + 1 || 1;
@@ -154,9 +148,6 @@ function handleclick(e) {
 		}
 		PlaceTile(selectedTool, tileSelected, e);
 	}
-
-	// else {
-	// }
 }
 
 // using item
@@ -167,20 +158,12 @@ function PlaceTile(selectedTool, tileSelected, e) {
 		tileSelected === 'sky'
 	) {
 		let tileToPlace = selectedTool.getAttribute('data-type');
-		console.log(tileToPlace);
-		// if (tileSelected) {
-		// reduceCount(e);
 		const inventoryBlockItems = document.querySelector(
 			`[data-type = '${tileToPlace}'] > span`
 		);
-		// console.log(inventoryBlockItems);
 		if (tileSelected && inventoryBlockItems.textContent > '0') {
-			// console.log(e.currentTarget.classList);
-			// e.target.classList.remove('hidden');
 			inventoryBlockItems.style.userSelect = 'none';
-			// obj[tileToPlace] = obj[tileToPlace] - 1;
 			inventoryBlockItems.textContent = --obj[tileToPlace];
-			// return inventoryBlockItems.textContent;
 			tileSelected = e.target.setAttribute(
 				'data-type',
 				selectedTool.getAttribute('data-type')

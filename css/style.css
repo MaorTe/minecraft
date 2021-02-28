@@ -288,7 +288,7 @@ body {
 }
 
 [data-type='trunk'] {
-	background-image: url('https://lh3.googleusercontent.com/2a4bC3zgcuFZq6c3tSCmXXJmJtCiDVQEKLOpHrZW3ATeKm9HI2khz5AGGErMugyQWtIQQ2uXg6i70WMcre4BGg4=s400');
+	background-image: url('../img/trunklight.png');
 	position: relative;
 }
 
@@ -298,7 +298,7 @@ body {
 }
 
 [data-type='rock'] {
-	background-image: url('http://3.bp.blogspot.com/-i4ig21EjOq8/VhJA4Ac6tEI/AAAAAAAAARA/XMbJg5iixHI/s1600/Block%2Bof%2BCobblestone%2B1.png');
+	background-image: url('../img/rocklight.png');
 	position: relative;
 }
 
@@ -356,7 +356,22 @@ body {
 		align-items: center;
 		margin: 0;
 	}
-
+	.tools {
+		display: flex;
+		flex-direction: row;
+	}
+	.tools > div {
+		width: 55px;
+		height: 55px;
+	}
+	.inventory {
+		display: flex;
+		flex-direction: row;
+	}
+	.inventory > div {
+		width: 35px;
+		height: 35px;
+	}
 	.inventory-item,
 	.tool-box {
 		margin: 2px 5px;
