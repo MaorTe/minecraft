@@ -172,7 +172,6 @@ function placeTile(selectedTool, tileSelected, e) {
 
 // selecting item from inventory
 const inventoryItems = document.querySelectorAll('.toolbar [data-type]');
-console.log(inventoryItems);
 // this forEach will attach event listeners to all childnodes inventoryItems NodeList
 inventoryItems.forEach((el) => {
 	el.addEventListener('click', SelectItemFromInventory);
