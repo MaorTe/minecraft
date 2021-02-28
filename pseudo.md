@@ -6,7 +6,7 @@
 
 # loop over my matrix, on each loop ill create a div and assign a different class depending on the number.
 
-3. Create an Object the will hold my games state
+3. Create an Object for the items
 
 # my different tools
 

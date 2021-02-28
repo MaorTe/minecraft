@@ -62,7 +62,7 @@ body {
 	left: 0;
 	background: center repeat;
 	padding: 5vh 10vw;
-	background-image: url('http://pavbca.com/walldb/original/2/f/2/209860.jpg#.YDjGI_gc2b8.link');
+	background-image: url('../img/bg.jpg');
 	height: 100vh;
 	width: 100vw;
 	display: flex;
