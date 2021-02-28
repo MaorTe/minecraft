@@ -7,7 +7,6 @@ const resetBtn = document.querySelector('.reset-btn');
 startBtn.addEventListener('click', startGame);
 function startGame() {
 	if (world.childElementCount === 0) {
-		console.log(world.childElementCount);
 		createMatrix();
 	}
 	landingPage.classList.add('hidden');
@@ -18,7 +17,6 @@ function startGame() {
 // add event listener to restart the game button to go back to the landing page
 restartBtn.addEventListener('click', restart);
 function restart() {
-	console.log(world.childElementCount);
 	if (world.childElementCount === 0) {
 		createMatrix();
 	}
@@ -176,7 +174,7 @@ function PlaceTile(selectedTool, tileSelected, e) {
 const inventoryItems = document.querySelector('.toolbar');
 inventoryItems.addEventListener('click', SelectItemFromInventory);
 function SelectItemFromInventory(e) {
-	console.log('aaaa');
+	debugger;
 	const inventoryItem = document.querySelectorAll('.toolbar [data-type]');
 	// console.log(inventoryItem);
 	// if (e.target.classList.contains('toolbar')) {
