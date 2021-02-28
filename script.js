@@ -144,13 +144,13 @@ function handleclick(e) {
 			}
 			tileSelected = e.target.setAttribute('data-type', 'sky');
 		}
-		PlaceTile(selectedTool, tileSelected, e);
+		placeTile(selectedTool, tileSelected, e);
 	}
 }
 
 // using item
 const inventory = document.querySelector('.inventory');
-function PlaceTile(selectedTool, tileSelected, e) {
+function placeTile(selectedTool, tileSelected, e) {
 	if (
 		selectedTool.classList.contains('inventory-item') &&
 		tileSelected === 'sky'
@@ -171,20 +171,19 @@ function PlaceTile(selectedTool, tileSelected, e) {
 }
 
 // selecting item from inventory
-const inventoryItems = document.querySelector('.toolbar');
-inventoryItems.addEventListener('click', SelectItemFromInventory);
+const inventoryItems = document.querySelectorAll('.toolbar [data-type]');
+console.log(inventoryItems);
+// this forEach will attach event listeners to all childnodes inventoryItems NodeList
+inventoryItems.forEach((el) => {
+	el.addEventListener('click', SelectItemFromInventory);
+});
 function SelectItemFromInventory(e) {
-	debugger;
-	const inventoryItem = document.querySelectorAll('.toolbar [data-type]');
-	// console.log(inventoryItem);
-	// if (e.target.classList.contains('toolbar')) {
 	if (e.target.classList.contains('selected')) {
 		e.target.classList.remove('selected');
 	} else {
-		inventoryItem.forEach((el) => el.classList.remove('selected'));
+		inventoryItems.forEach((el) => el.classList.remove('selected'));
 		e.target.classList.add('selected');
 	}
-	// }
 }
 
 // reset the game button
