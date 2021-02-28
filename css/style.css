@@ -156,7 +156,7 @@ body {
 	font-size: 2rem;
 	text-align: center;
 }
-.tutorial-container .toolBox:hover {
+.tutorial-container .tool-box:hover {
 	cursor: auto;
 	box-shadow: none;
 }
@@ -225,7 +225,7 @@ body {
 	align-items: center;
 	padding-bottom: 2vh;
 }
-.toolBox {
+.tool-box {
 	font-size: 1.4rem;
 	margin: 5px 0;
 	height: 10vh;
@@ -318,14 +318,14 @@ body {
 	margin: -1px;
 }
 
-.toolBox.selected {
+.tool-box.selected {
 	border-color: hsl(200, 82%, 24%);
 }
 .inventory-item.selected {
 	box-shadow: 1px 1px 2px 2px hsl(200, 46%, 60%);
 }
 .inventory-item:hover,
-.toolBox:hover,
+.tool-box:hover,
 .restart-btn:hover,
 .reset-btn:hover {
 	cursor: pointer;
@@ -358,7 +358,7 @@ body {
 	}
 
 	.inventory-item,
-	.toolBox {
+	.tool-box {
 		margin: 2px 5px;
 	}
 	.header {
@@ -456,7 +456,7 @@ body {
 	.tutorial-container h4 {
 		font-size: 0.8rem;
 	}
-	.tutorial-container .toolBox {
+	.tutorial-container .tool-box {
 		margin: 2px 0;
 		height: 8vh;
 		width: 8vh;
