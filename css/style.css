@@ -148,6 +148,9 @@ body {
 #landing-page.hidden {
 	display: none;
 }
+.hidden {
+	display: none;
+}
 /* --------------matrix-------------- */
 #minecraft {
 	height: 100%;
@@ -197,6 +200,9 @@ body {
 	color: white;
 	/* background: hsl(200, 82%, 24%); */
 	transform: scale(1.05);
+}
+.tools h2 {
+	padding-bottom: 15px;
 }
 .tools {
 	display: flex;
@@ -400,32 +406,38 @@ body {
 		grid-template-rows: 20vh 80vh;
 	}
 	.toolbar {
-		grid-template-rows: 1fr 1fr 50px;
-		grid-template-columns: auto auto;
-		padding: 1px;
+		grid-template-rows: repeat(1, 1fr);
+		grid-template-columns: repeat(2, 1fr);
+		padding: 2px;
 		padding-top: 10px;
+		grid-gap: 3px;
 	}
-	.tools {
-		grid-row: 1 / 3;
+	.tools,
+	.inventory {
+		grid-row: 1 / 1;
+		grid-gap: 3px;
 	}
-	.inventory h2,
-	.tools h2 {
+	.toolbar h2 {
+		font-size: 1rem;
+	}
+	.space {
+		font-size: 2rem;
+	}
+	.inventory h2 {
+		display: none;
+	}
+	.tools + h2 {
 		display: none;
 	}
 	.inventory {
-		grid-row: 3 / 3;
-	}
-	.restart-btn {
-		grid-row: 1 / 1;
-	}
-	.reset-btn {
 		grid-row: 2 / 2;
 	}
 	.world {
 		width: 100%;
 	}
 	.tutorial-container {
-		width: 80%;
+		width: 85%;
+		padding: 1vh 3vw;
 	}
 	.tutorial-container h2 {
 		font-size: 1.3rem;
