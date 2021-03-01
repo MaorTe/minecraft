@@ -430,7 +430,7 @@ body {
 		display: none;
 	}
 	.tools h2 {
-		padding: 15px;
+		padding: 8px 12px;
 	}
 	.inventory {
 		grid-row: 2 / 2;
